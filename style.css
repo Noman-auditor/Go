@@ -1,0 +1,201 @@
+/* ─── Reset ─── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── Variables ─── */
+:root {
+  --bg:   #030305;
+  --cyan: #00f5d4;
+  --pink: #ff2d78;
+}
+
+/* ─── Base ─── */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: #e8e8f0;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* ─── Grid Background ─── */
+.grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 212, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 212, .035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+/* ─── Scanlines ─── */
+.scan {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, .12) 3px,
+    rgba(0, 0, 0, .12) 4px
+  );
+  pointer-events: none;
+}
+
+/* ─── Top HUD Line ─── */
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cyan),
+    var(--pink),
+    var(--cyan),
+    transparent
+  );
+}
+
+/* ─── Corner Marks ─── */
+.corner {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+}
+.c-tl { top: 16px;    left: 16px;  border-top:    2px solid var(--cyan); border-left:   2px solid var(--cyan); }
+.c-tr { top: 16px;    right: 16px; border-top:    2px solid var(--cyan); border-right:  2px solid var(--cyan); }
+.c-bl { bottom: 16px; left: 16px;  border-bottom: 2px solid var(--cyan); border-left:   2px solid var(--cyan); }
+.c-br { bottom: 16px; right: 16px; border-bottom: 2px solid var(--cyan); border-right:  2px solid var(--cyan); }
+
+/* ─── Center Content ─── */
+.wrap {
+  position: relative;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* ─── Blinking Label ─── */
+.label {
+  font-size: 9px;
+  letter-spacing: .6em;
+  color: var(--cyan);
+  opacity: .6;
+  animation: blink 2s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: .6; }
+  50%       { opacity: .2; }
+}
+
+/* ─── Big Title ─── */
+.big {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(72px, 14vw, 148px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: .85;
+  text-align: center;
+  position: relative;
+}
+
+.big .w { color: #e8e8f0; }
+.big .c { color: var(--cyan); }
+
+.big .ghost {
+  position: absolute;
+  inset: 0;
+  color: var(--pink);
+  opacity: 0;
+  animation: glitch 6s infinite;
+}
+
+@keyframes glitch {
+  0%, 94%, 100% { opacity: 0; transform: none; }
+  95%            { opacity: .5; transform: translate(-4px, 2px) skewX(-3deg); }
+  97%            { opacity: 0; }
+  98%            { opacity: .3; transform: translate(4px, -2px); }
+}
+
+/* ─── Hint Text ─── */
+.hint {
+  font-size: 9px;
+  letter-spacing: .4em;
+  color: rgba(232, 232, 240, .2);
+  text-transform: uppercase;
+}
+
+.hint span { color: rgba(0, 245, 212, .5); }
+
+/* ─── Bottom Progress Bar ─── */
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: rgba(3, 3, 5, .95);
+  border-top: 1px solid rgba(0, 245, 212, .08);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  z-index: 30;
+}
+
+.bar-label {
+  font-size: 8px;
+  letter-spacing: .35em;
+  color: rgba(0, 245, 212, .4);
+}
+
+.bar-prog {
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 245, 212, .1);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--cyan);
+}
+
+.bar-dest {
+  font-size: 8px;
+  letter-spacing: .3em;
+  color: rgba(0, 245, 212, .5);
+}
+
+/* ─── Flash Overlay ─── */
+#flash {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--cyan);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 800;
+  letter-spacing: .1em;
+  color: var(--bg);
+}

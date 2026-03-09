@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="grid"></div>
+  <div class="scan"></div>
+  <div class="hud"></div>
+
+  <div class="corner c-tl"></div>
+  <div class="corner c-tr"></div>
+  <div class="corner c-bl"></div>
+  <div class="corner c-br"></div>
+
+  <div class="wrap">
+    <div class="label">[ AUTO REDIRECTING ]</div>
+    <div class="big">
+      <div class="w">RANDOM</div>
+      <div class="c">PORTAL</div>
+      <div class="ghost">RANDOM<br>PORTAL</div>
+    </div>
+    <div class="hint">Refresh &rarr; <span>new destination</span></div>
+  </div>
+
+  <div class="bar">
+    <span class="bar-label">REDIRECTING</span>
+    <div class="bar-prog">
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+    <span class="bar-dest" id="barDest">—</span>
+  </div>
+
+  <div id="flash"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
