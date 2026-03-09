@@ -2,14 +2,10 @@
 // 🔧 SITES LIST — Add or remove URLs here
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const SITES = [
-  { url: 'https://www.google.com',    label: 'GOOGLE'    },
-  { url: 'https://www.youtube.com',   label: 'YOUTUBE'   },
-  { url: 'https://www.github.com',    label: 'GITHUB'    },
-  { url: 'https://www.reddit.com',    label: 'REDDIT'    },
-  { url: 'https://www.wikipedia.org', label: 'WIKIPEDIA' },
-  { url: 'https://www.twitter.com',   label: 'TWITTER'   },
-  { url: 'https://www.netflix.com',   label: 'NETFLIX'   },
-  { url: 'https://www.discord.com',   label: 'DISCORD'   },
+  { url: 'https://www.effectivegatecpm.com/ut8uqebx?key=0723186b09c03b7ee83173a347fc4f07',    label: 'GOOGLE'    },
+  { url: 'https://www.effectivegatecpm.com/w60dn0cq?key=44813dcc9c13b14cfd84f7fdebdf0937',   label: 'YOUTUBE'   },
+  { url: 'https://www.effectivegatecpm.com/n7ig3k7kdy?key=c1ea5d6431241df69ca5b0f30d26e8bc',    label: 'GITHUB'    },
+  
 ];
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
