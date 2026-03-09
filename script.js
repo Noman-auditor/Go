@@ -15,7 +15,7 @@ const SITES = [
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ⏱ AUTO REDIRECT DELAY (milliseconds)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const AUTO_DELAY = 3000; // 3 seconds
+const AUTO_DELAY =.010; // 3 seconds
 
 // ─── Pick a random site ───────────────────
 const idx  = Math.floor(Math.random() * SITES.length);
@@ -40,8 +40,8 @@ requestAnimationFrame(animateBar);
 function redirect() {
   const flash = document.getElementById('flash');
   flash.textContent       = site.label;
-  flash.style.transition  = 'opacity .07s';
-  flash.style.opacity     = '1';
+  flash.style.transition  = 'opacity .00s';
+  flash.style.opacity     = '2';
 
   setTimeout(() => {
     window.location.href = site.url;
